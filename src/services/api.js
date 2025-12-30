@@ -1,9 +1,12 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "mini-user-management-system-backend-production.up.railway.app",
- withCredentials: true,
+  baseURL: import.meta.env.VITE_API_BASE_URL,
+  headers: {
+    "Content-Type": "application/json",
+  },
+  withCredentials: true,
 });
 
-
 export default api;
+
